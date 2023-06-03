@@ -16,7 +16,6 @@ const ColorPicker = () => {
 					'#EFBD4E',
 					'#80C670',
 					'#E74C3C',
-					'#3498DB',
 					'#9B59B6',
 					'#1ABC9C',
 					'#BDC3C7',
