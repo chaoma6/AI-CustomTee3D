@@ -2,16 +2,17 @@
 
 CustomTee3D is a web application that allows users to load, create, and customize LOGO for T-shirt 3D models. With various lighting options, camera controls, and object positioning in space, users can fully explore and interact with the 3D world. The codebase follows industry-standard best practices and utilizes Higher Order Components (HOCs) for reusability and scalability. 
 
-CustomTee3D supports custom color and file formats upload, and it integrates with the DALLE AI for image generation and utilization. The application offers a responsive and performant experience across all devices. Special thanks to Adrian Hajdin from JSMastery for providing excellent 3D tutorials.
+CustomTee3D supports custom color and file formats upload, and it integrates with the DALLE AI for image generation and utilization. The application offers a responsive and performant experience across all devices. 
+Special thanks to Adrian Hajdin from JSMastery for providing excellent 3D tutorials.
 
 ## Ongoing Development Plans
-- Due to API limitations, the AI Logo Generator function is currently disabled.
+- Due to API limitations, the AI Logo Generator/Picker function is currently disabled.
 - Enable users to download the resulting T-shirt model image.
-- Future plans include incorporating MongoDB for database functionality.
+- MongoDB for database functionality.
 
 ## Frontend Technology Stack
 
-React Three.js React Three Fiber React Three Drei Framer Motion Valtio React Color Tailwind CSS
+React Three.js React Three Fiber React Three.js Drei Framer Motion Valtio React Color Tailwind CSS
 
 ## Backend Technology Stack
 Express
