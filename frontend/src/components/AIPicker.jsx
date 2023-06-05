@@ -3,10 +3,12 @@ import React from 'react';
 import CustomButton from './CustomButton';
 
 function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
+  const openAIAPIUnavailableMessage = 'OpenAI API is currently not available';
+
   return (
     <div className="aipicker-container">
       <textarea
-        placeholder="Ask AI..."
+        placeholder={openAIAPIUnavailableMessage}
         rows={5}
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
@@ -16,8 +18,9 @@ function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
         {generatingImg ? (
           <CustomButton
             type="outline"
-            title="Asking AI..."
+            title={openAIAPIUnavailableMessage}
             customStyles="text-xs"
+            disabled
           />
         ) : (
           <>
@@ -26,6 +29,7 @@ function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
               title="AI Logo"
               handleClick={() => handleSubmit('logo')}
               customStyles="text-xs"
+              disabled
             />
 
             <CustomButton
@@ -33,6 +37,7 @@ function AIPicker({ prompt, setPrompt, generatingImg, handleSubmit }) {
               title="AI Full"
               handleClick={() => handleSubmit('full')}
               customStyles="text-xs"
+              disabled
             />
           </>
         )}

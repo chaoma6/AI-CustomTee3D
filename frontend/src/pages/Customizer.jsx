@@ -20,7 +20,7 @@ function Customizer() {
   const [file, setFile] = useState('');
 
   const [prompt, setPrompt] = useState('');
-  const [generatingImg, setGeneratingImg] = useState(false);
+  // const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState('');
   const [activeFilterTab, setActiveFilterTab] = useState({
@@ -66,35 +66,32 @@ function Customizer() {
   };
 
   const handleSubmit = async (type) => {
-    if (!prompt) {
-      // eslint-disable-next-line no-alert
-      alert('Please enter a prompt');
-      return;
-    }
-
-    try {
-      setGeneratingImg(true);
-
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          prompt
-        })
-      });
-
-      const data = await response.json();
-
-      handleDecals(type, `data:image/png;base64,${data.photo}`);
-    } catch (error) {
-      // eslint-disable-next-line no-alert
-      alert(error);
-    } finally {
-      setGeneratingImg(false);
-      setActiveEditorTab('');
-    }
+    prompt('OpenAI API is not available', type);
+    // if (!prompt) {
+    //   // eslint-disable-next-line no-alert
+    //   alert('chatGPA API is currently not available');
+    //   return;
+    // }
+    // try {
+    //   setGeneratingImg(true);
+    //   const response = await fetch('http://localhost:8080/api/v1/dalle', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       prompt
+    //     })
+    //   });
+    //   const data = await response.json();
+    //   handleDecals(type, `data:image/png;base64,${data.photo}`);
+    // } catch (error) {
+    //   // eslint-disable-next-line no-alert
+    //   alert(error);
+    // } finally {
+    //   setGeneratingImg(false);
+    //   setActiveEditorTab('');
+    // }
   };
 
   const generateTabContent = () => {
@@ -108,7 +105,7 @@ function Customizer() {
           <AIPicker
             prompt={prompt}
             setPrompt={setPrompt}
-            generatingImg={generatingImg}
+            // generatingImg={generatingImg}
             handleSubmit={handleSubmit}
           />
         );
